@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <h1>Welcome to the Quiz Game!</h1>
+
+    <script>
+      
+        alert("Welcome to the Quiz Game!");
+
+        let userName = prompt("Please enter your name:");
+
+        
+        let ready = confirm("Hi " + userName + "! Are you ready for the quiz?");
+
+        if (ready) {
+            
+            let question = "What is the capital of India?\n";
+            question += "a) Mumbai\n";
+            question += "b) Delhi\n";
+            question += "c) Hyderabad\n";
+            question += "d) Chennai\n";
+            
+            let answer = prompt(question + "Please type a, b, c, or d:");
+
+            
+            if (answer.toLowerCase() === "b") {
+                alert("Correct! Well done, " + userName + "!");
+            } else {
+                alert("Wrong answer. The correct answer is Delhi.");
+            }
+        } else {
+            alert("No worries, " + userName + ". Come back when you are ready!");
+        }
+    </script>
+</body>
+</html>

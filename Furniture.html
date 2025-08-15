@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store Catalog</title>
+    <style>
+        body {
+            background-color: #f5f5dc; /* Light beige background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #8b4513; /* Saddle Brown */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            color: green;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a0522d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Furniture World</h1>
+        <p>Your comfort, our priority!</p>
+    </header>
+
+    <section class="product-section">
+
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="sofa.jpeg" alt="Sofa">
+            <h3>Sofa Set</h3>
+            <p>Comfortable 3-seater sofa for your living room.</p>
+            <div class="price">₹25,000</div>
+            <button>Buy Now</button>
+        </div>
+
+        <!-- Product 2 (inline CSS customizations) -->
+        <div class="product-card" style="background-color: #ffe4b5;">
+            <img src="table.jpg" alt="Dining Table">
+            <h3 style="color: darkred;">Dining Table</h3>
+            <p>Stylish wooden dining table for family gatherings.</p>
+            <div class="price">₹18,000</div>
+            <button style="background-color: darkred; color: white; padding: 12px 18px; border-radius: 8px;">Buy Now</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="chair.jpeg" alt="Office Chair">
+            <h3>Office Chair</h3>
+            <p>Ergonomic office chair for all-day comfort.</p>
+            <div class="price">₹8,500</div>
+            <button>Buy Now</button>
+        </div>
+
+    </section>
+
+</body>
+</html>

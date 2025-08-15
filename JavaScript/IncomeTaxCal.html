@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Calculator</title>
+</head>
+<body>
+    <h1>Income Tax Calculator</h1>
+
+    <script>
+        
+        let fullName = prompt("Enter your full name:");
+
+        let pan = prompt("Enter your PAN number (10 characters, uppercase letters and numbers):");
+        while (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)) {
+            pan = prompt("Invalid PAN format. Enter again (Example: ABCDE1234F):");
+        }
+
+        let dobInput = prompt("Enter your Date of Birth (YYYY-MM-DD):");
+        let dob = new Date(dobInput);
+
+        while (isNaN(dob.getTime())) {
+            dobInput = prompt("Invalid date format. Please enter DOB in YYYY-MM-DD format:");
+            dob = new Date(dobInput);
+        }
+
+        let today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        let monthDiff = today.getMonth() - dob.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+
+        let income = parseFloat(prompt("Enter your annual income in ₹:"));
+        while (isNaN(income) || income < 0) {
+            income = parseFloat(prompt("Invalid income. Enter a valid number:"));
+        }
+
+        
+        let tax = 0;
+
+        if (income <= 250000) {
+            tax = 0;
+        } else if (income <= 500000) {
+            tax = (income - 250000) * 0.05;
+        } else if (income <= 1000000) {
+            tax = 250000 * 0.05 + (income - 500000) * 0.2;
+        } else {
+            tax = 250000 * 0.05 + 500000 * 0.2 + (income - 1000000) * 0.3;
+        }
+
+        tax = Math.round(tax); // Round to nearest rupee
+
+    
+        alert(
+            "Name: " + fullName.toUpperCase() + "\n" +
+            "PAN: " + pan.toUpperCase() + "\n" +
+            "Age: " + age + " years\n" +
+            "Annual Income: ₹ " + income.toLocaleString() + "\n" +
+            "Calculated Tax: ₹ " + tax.toLocaleString()
+        );
+    </script>
+</body>
+</html>

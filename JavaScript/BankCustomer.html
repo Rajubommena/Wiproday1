@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Customers Management</title>
+</head>
+<body>
+    <h1>Bank Customers Management</h1>
+
+    <script>
+        let numCustomers = parseInt(prompt("How many customers do you want to register?"));
+        while (isNaN(numCustomers) || numCustomers <= 0) {
+            numCustomers = parseInt(prompt("Invalid input. Enter a positive number:"));
+        }
+
+        let customers = [];
+        for (let i = 0; i < numCustomers; i++) {
+            let name = prompt(`Enter name of customer ${i + 1}:`);
+            customers.push(name);
+        }
+
+        let output = "Customers using for...of:\n";
+        for (let customer of customers) {
+            output += customer + "\n";
+        }
+
+        output += "\nCustomer IDs using for...in:\n";
+        for (let id in customers) {
+            output += id + "\n";
+        }
+
+        let newCustomer = prompt("Enter a new customer to add at the end (push):");
+        customers.push(newCustomer);
+        output += `\nAfter push('${newCustomer}'): ${customers.join(", ")}\n`;
+
+        let removedCustomer = customers.pop();
+        output += `After pop(): ${customers.join(", ")}\n`;
+
+        let insertCustomer = prompt("Enter a customer name to insert at a specific position:");
+        let insertPos = parseInt(prompt(`Enter position (0 to ${customers.length}) to insert '${insertCustomer}':`));
+        while (isNaN(insertPos) || insertPos < 0 || insertPos > customers.length) {
+            insertPos = parseInt(prompt(`Invalid position. Enter a number between 0 and ${customers.length}:`));
+        }
+        customers.splice(insertPos, 0, insertCustomer);
+        output += `After insert '${insertCustomer}' at position ${insertPos}: ${customers.join(", ")}\n`;
+
+        let deletePos = parseInt(prompt(`Enter position (0 to ${customers.length - 1}) of customer to delete:`));
+        while (isNaN(deletePos) || deletePos < 0 || deletePos >= customers.length) {
+            deletePos = parseInt(prompt(`Invalid position. Enter a number between 0 and ${customers.length - 1}:`));
+        }
+        let deletedCustomer = customers.splice(deletePos, 1);
+        output += `After delete at position ${deletePos}: ${customers.join(", ")}\n`;
+
+        output += `\nFinal Customers: ${customers.join(", ")}`;
+
+        alert(output);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equality & Inequality Checker</title>
+</head>
+<body>
+    <h1>Equality & Inequality Checker</h1>
+
+    <script>
+        
+        let value1 = prompt("Enter the first value:");
+        let value2 = prompt("Enter the second value:");
+
+        let type1 = typeof value1;
+        let type2 = typeof value2;
+
+        let num1 = Number(value1);
+        let num2 = Number(value2);
+
+        let output = `First Value: ${value1} (${type1})\n`;
+        output += `Second Value: ${value2} (${type2})\n\n`;
+
+        output += `Using == : ${value1 == value2} → Equality ignores type\n`;
+
+        output += `Using === : ${value1 === value2} → Strict equality checks type too\n`;
+
+        output += `Using != : ${value1 != value2} → Values considered ${value1 != value2 ? "not equal" : "equal"}\n`;
+
+        
+        output += `Using !== : ${value1 !== value2} → Strict inequality because types differ\n`;
+
+        alert(output);
+    </script>
+</body>
+</html>

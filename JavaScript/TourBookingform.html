@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 400px; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 5px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px 20px; }
+        #summary { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Tour Booking Form</h1>
+
+    <form id="tourForm" onsubmit="return bookTour()">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="destination">Destination:</label>
+        <select id="destination" required>
+            <option value="Ooty">Ooty</option>
+            <option value="Goa">Goa</option>
+            <option value="Manali">Manali</option>
+        </select>
+
+        <label for="days">Number of Days:</label>
+        <input type="number" id="days" min="1" required>
+
+        <label for="travelers">Number of Travelers:</label>
+        <input type="number" id="travelers" min="1" required>
+
+        <button type="submit">Book Now</button>
+    </form>
+
+    <div id="summary"></div>
+
+    <script>
+        function bookTour() {
+          
+            let name = document.getElementById("fullName").value;
+            let email = document.getElementById("email").value;
+            let destination = document.getElementById("destination").value;
+            let days = parseInt(document.getElementById("days").value);
+            let travelers = parseInt(document.getElementById("travelers").value);
+
+            
+            let pricePerDay = 0;
+            if (destination === "Ooty") pricePerDay = 2000;
+            else if (destination === "Goa") pricePerDay = 3000;
+            else if (destination === "Manali") pricePerDay = 4000;
+
+            
+            let totalPrice = pricePerDay * days * travelers;
+
+           
+            let summaryDiv = document.getElementById("summary");
+            summaryDiv.innerHTML = `
+                <h2>Booking Summary</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Destination:</strong> ${destination}</p>
+                <p><strong>Days:</strong> ${days}</p>
+                <p><strong>Travelers:</strong> ${travelers}</p>
+                <p><strong>Total Price:</strong> ₹ ${totalPrice.toLocaleString()}</p>
+            `;
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

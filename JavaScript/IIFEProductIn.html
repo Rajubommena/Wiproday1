@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IIFE Product Inventory</title>
+</head>
+<body>
+  <h2>JavaScript Lab - IIFE + Product Context</h2>
+  <pre id="output"></pre>
+
+  <script>
+    
+    const productInventory = (function () {
+      let stock = 0; 
+      function getStock() {
+        return stock;
+      }
+
+      function addStock(quantity) {
+        stock += quantity;
+        return stock;
+      }
+
+      function sell(quantity) {
+        if (stock >= quantity) {
+          stock -= quantity;
+          console.log(`Sold ${quantity} items.`);
+          return true;
+        } else {
+          console.log("Insufficient stock");
+          return false;
+        }
+      }
+
+      
+      return {
+        getStock,
+        addStock,
+        sell
+      };
+    })();
+
+    
+    let output = "";
+
+    
+    productInventory.addStock(10);
+    output += `Stock after adding: ${productInventory.getStock()}\n`;
+
+    
+    if (productInventory.sell(3)) {
+      output += `Sold 3 items.\n`;
+    }
+
+    
+    output += `Stock remaining: ${productInventory.getStock()}\n`;
+
+    
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* --- Global --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* --- Header --- */
+header {
+  background-color: #004a77;
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo { font-size: 18px; font-weight: bold; }
+nav a { color: white; margin: 0 8px; font-size: 14px; text-decoration: none; }
+
+/* --- Main Content --- */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+/* Banner */
+.banner {
+  background: #004a77;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+.banner h1 { font-size: 20px; margin-bottom: 8px; }
+.banner button {
+  padding: 6px 10px;
+  font-size: 13px;
+  background-color: #f95d5d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Products in one line */
+.product-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.product {
+  background: white;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  flex: 1;
+}
+.product img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.product h3 { font-size: 14px; margin: 6px 0; }
+.product .price { font-weight: bold; font-size: 13px; margin-bottom: 6px; }
+.product button {
+  padding: 5px 8px;
+  font-size: 12px;
+  background-color: #004a77;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Special Offers */
+.special-offers {
+  background: #ffe9e6;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Reviews in one row */
+.review-grid {
+  display: flex;
+  gap: 8px;
+}
+.review-grid blockquote {
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  flex: 1;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #004a77;
+  color: white;
+  padding: 6px;
+  text-align: center;
+  font-size: 12px;
+}
