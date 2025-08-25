@@ -1,0 +1,52 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Raju",
+      "age": "30",
+      "position": "Forward",
+      "club": "Inter ",
+      "nationality": "Indian",
+      "goals": "20",
+      "matchesPlayed": "12",
+      "email": "raju@example.com",
+      "contactNumber": "9876543210"
+    },
+    {
+      "id": 2,
+      "name": "Cristiano Ronaldo",
+      "age": 39,
+      "position": "Forward",
+      "club": "Al Nassr",
+      "nationality": "Portugal",
+      "goals": 40,
+      "matchesPlayed": 27,
+      "email": "ronaldo@example.com",
+      "contactNumber": "9876501234"
+    },
+    {
+      "id": 3,
+      "name": "Kevin De Bruyne",
+      "age": 33,
+      "position": "Midfielder",
+      "club": "Manchester City",
+      "nationality": "Belgium",
+      "goals": 15,
+      "matchesPlayed": 22,
+      "email": "kevin@example.com",
+      "contactNumber": "9876512345"
+    },
+    {
+      "id": 4,
+      "name": "Akhira",
+      "age": "29",
+      "position": "Defender",
+      "club": "Inter city",
+      "nationality": "Indian",
+      "goals": "20",
+      "matchesPlayed": "12",
+      "email": "akhira@example.com",
+      "contactNumber": "9876590869"
+    }
+  ]
+}
